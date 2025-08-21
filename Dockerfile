@@ -1,11 +1,16 @@
-FROM node:24-bookworm
+FROM node:24.6.0-bookworm-slim
 
 WORKDIR /app
 
 RUN npm install -g pnpm
 
-COPY . .
+COPY package.json .
+COPY pnpm-lock.yaml .
 
 RUN pnpm i
 
-CMD [ "pnpm", "vite", "--host" ]
+COPY . .
+
+RUN pnpm build
+
+CMD [ "pnpm", "preview" ]
