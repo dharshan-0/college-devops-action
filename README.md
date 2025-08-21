@@ -1,6 +1,6 @@
 # skens 
 
-A react that shows random anime images.
+A react wep app that shows random anime images.
 
 
 ## Instructions
